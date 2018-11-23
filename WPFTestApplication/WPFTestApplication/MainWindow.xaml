@@ -1,0 +1,24 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
+        Width="1024" Height="768">
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <m:Map x:Name="myMap" CredentialsProvider="NPwaI3Q1KHMYd3byRBU5~w3ihaBecNoIu3KdeV4Efdg~AoCrgEGSWSuxYM3_CujxuBRjHCckbJUIA4AinCNmhY4Z50GfHa_cxGufkWZ1_CK0" 
+               Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" Padding="5"
+               Center="55.9396761,9.5155848" ZoomLevel="4.000" AnimationLevel="None" Mode="AerialWithLabels"/>
+
+
+        <Button  Content="Change Overview" HorizontalAlignment="Right" 
+                    VerticalAlignment="Top" Opacity="0.7" Click="btnToggleMap_Click" Height="33" Width="100" Margin="0,31,30,0"/>
+
+    </Grid>
+</Window>
