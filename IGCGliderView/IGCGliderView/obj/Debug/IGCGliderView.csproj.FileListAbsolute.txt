@@ -1,0 +1,17 @@
+C:\ICT\4rd Semester\SEP\Code\IGCGliderView\IGCGliderView\bin\Debug\IGCGliderView.exe.config
+C:\ICT\4rd Semester\SEP\Code\IGCGliderView\IGCGliderView\bin\Debug\IGCGliderView.exe
+C:\ICT\4rd Semester\SEP\Code\IGCGliderView\IGCGliderView\bin\Debug\IGCGliderView.pdb
+C:\ICT\4rd Semester\SEP\Code\IGCGliderView\IGCGliderView\bin\Debug\Microsoft.Maps.MapControl.WPF.dll
+C:\ICT\4rd Semester\SEP\Code\IGCGliderView\IGCGliderView\bin\Debug\Microsoft.Maps.MapControl.WPF.xml
+C:\ICT\4rd Semester\SEP\Code\IGCGliderView\IGCGliderView\obj\Debug\IGCGliderView.csprojAssemblyReference.cache
+C:\ICT\4rd Semester\SEP\Code\IGCGliderView\IGCGliderView\obj\Debug\MainWindow.baml
+C:\ICT\4rd Semester\SEP\Code\IGCGliderView\IGCGliderView\obj\Debug\MainWindow.g.cs
+C:\ICT\4rd Semester\SEP\Code\IGCGliderView\IGCGliderView\obj\Debug\App.g.cs
+C:\ICT\4rd Semester\SEP\Code\IGCGliderView\IGCGliderView\obj\Debug\IGCGliderView_MarkupCompile.cache
+C:\ICT\4rd Semester\SEP\Code\IGCGliderView\IGCGliderView\obj\Debug\IGCGliderView.g.resources
+C:\ICT\4rd Semester\SEP\Code\IGCGliderView\IGCGliderView\obj\Debug\IGCGliderView.Properties.Resources.resources
+C:\ICT\4rd Semester\SEP\Code\IGCGliderView\IGCGliderView\obj\Debug\IGCGliderView.csproj.GenerateResource.cache
+C:\ICT\4rd Semester\SEP\Code\IGCGliderView\IGCGliderView\obj\Debug\IGCGliderView.csproj.CoreCompileInputs.cache
+C:\ICT\4rd Semester\SEP\Code\IGCGliderView\IGCGliderView\obj\Debug\IGCGliderView.csproj.CopyComplete
+C:\ICT\4rd Semester\SEP\Code\IGCGliderView\IGCGliderView\obj\Debug\IGCGliderView.exe
+C:\ICT\4rd Semester\SEP\Code\IGCGliderView\IGCGliderView\obj\Debug\IGCGliderView.pdb
