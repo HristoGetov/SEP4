@@ -15,3 +15,14 @@ C:\Users\marega\source\repos\WPFTestApplication\WPFTestApplication\obj\Debug\WPF
 C:\Users\marega\source\repos\WPFTestApplication\WPFTestApplication\obj\Debug\WPFTestApplication.csproj.CopyComplete
 C:\Users\marega\source\repos\WPFTestApplication\WPFTestApplication\obj\Debug\WPFTestApplication.exe
 C:\Users\marega\source\repos\WPFTestApplication\WPFTestApplication\obj\Debug\WPFTestApplication.pdb
+C:\ICT\4rd Semester\SEP\Code\WPFTestApplication\WPFTestApplication\obj\Debug\WPFTestApplication.csprojAssemblyReference.cache
+C:\ICT\4rd Semester\SEP\Code\WPFTestApplication\WPFTestApplication\obj\Debug\MainWindow.baml
+C:\ICT\4rd Semester\SEP\Code\WPFTestApplication\WPFTestApplication\obj\Debug\MainWindow.g.cs
+C:\ICT\4rd Semester\SEP\Code\WPFTestApplication\WPFTestApplication\obj\Debug\App.g.cs
+C:\ICT\4rd Semester\SEP\Code\WPFTestApplication\WPFTestApplication\obj\Debug\WPFTestApplication_MarkupCompile.cache
+C:\ICT\4rd Semester\SEP\Code\WPFTestApplication\WPFTestApplication\obj\Debug\WPFTestApplication.g.resources
+C:\ICT\4rd Semester\SEP\Code\WPFTestApplication\WPFTestApplication\obj\Debug\WPFTestApplication.Properties.Resources.resources
+C:\ICT\4rd Semester\SEP\Code\WPFTestApplication\WPFTestApplication\obj\Debug\WPFTestApplication.csproj.GenerateResource.cache
+C:\ICT\4rd Semester\SEP\Code\WPFTestApplication\WPFTestApplication\obj\Debug\WPFTestApplication.csproj.CoreCompileInputs.cache
+C:\ICT\4rd Semester\SEP\Code\WPFTestApplication\WPFTestApplication\obj\Debug\WPFTestApplication.exe
+C:\ICT\4rd Semester\SEP\Code\WPFTestApplication\WPFTestApplication\obj\Debug\WPFTestApplication.pdb
