@@ -207,7 +207,7 @@
             this.map.Size = new System.Drawing.Size(1197, 522);
             this.map.TabIndex = 0;
             this.map.Zoom = 0D;
-            this.map.Click += new System.EventHandler(this.map_Click);
+           
             this.map.MouseClick += new System.Windows.Forms.MouseEventHandler(this.map_MouseClick);
             // 
             // Form1
