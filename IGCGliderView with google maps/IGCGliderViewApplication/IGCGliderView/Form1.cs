@@ -43,5 +43,37 @@ namespace IGCGliderView
             map.MinZoom = 5;
             map.Zoom = 7;
         }
+
+        private void Change_Click(object sender, EventArgs e)
+        {
+            if(map.MapProvider == GMapProviders.BingMap)
+            {
+                map.MapProvider = GMapProviders.BingHybridMap;
+                map.SetPositionByKeywords("Denmark");
+                map.ShowCenter = false;
+                map.MaxZoom = 100;
+                map.MinZoom = 5;
+                map.Zoom = 7;
+            }
+            else if (map.MapProvider == GMapProviders.BingHybridMap)
+            {
+                map.MapProvider = GMapProviders.BingMap;
+                map.SetPositionByKeywords("Denmark");
+                map.ShowCenter = false;
+                map.MaxZoom = 100;
+                map.MinZoom = 5;
+                map.Zoom = 7;
+            }
+        }
+
+        private void map_MouseClick(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void map_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
