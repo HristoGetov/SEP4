@@ -40,6 +40,8 @@
             this.button4 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.map = new GMap.NET.WindowsForms.GMapControl();
+            this.Test = new System.Windows.Forms.Button();
+            this.textBox_Message = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -52,11 +54,13 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.textBox_Message);
+            this.splitContainer1.Panel1.Controls.Add(this.Test);
             this.splitContainer1.Panel1.Controls.Add(this.groupBox1);
             this.splitContainer1.Panel1.Controls.Add(this.pictureBox1);
             this.splitContainer1.Panel1.Controls.Add(this.Change);
@@ -67,8 +71,9 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.map);
-            this.splitContainer1.Size = new System.Drawing.Size(1216, 537);
-            this.splitContainer1.SplitterDistance = 253;
+            this.splitContainer1.Size = new System.Drawing.Size(933, 444);
+            this.splitContainer1.SplitterDistance = 194;
+            this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 0;
             // 
             // groupBox1
@@ -76,11 +81,9 @@
             this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Controls.Add(this.Strong);
             this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Location = new System.Drawing.Point(4, 309);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(3, 251);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(169, 160);
+            this.groupBox1.Size = new System.Drawing.Size(127, 116);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Wind Speed";
@@ -88,10 +91,9 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(20, 25);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton1.Location = new System.Drawing.Point(15, 20);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(96, 21);
+            this.radioButton1.Size = new System.Drawing.Size(76, 17);
             this.radioButton1.TabIndex = 10;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Light Wind";
@@ -100,10 +102,9 @@
             // Strong
             // 
             this.Strong.AutoSize = true;
-            this.Strong.Location = new System.Drawing.Point(20, 107);
-            this.Strong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Strong.Location = new System.Drawing.Point(15, 87);
             this.Strong.Name = "Strong";
-            this.Strong.Size = new System.Drawing.Size(107, 21);
+            this.Strong.Size = new System.Drawing.Size(84, 17);
             this.Strong.TabIndex = 12;
             this.Strong.TabStop = true;
             this.Strong.Tag = "";
@@ -113,10 +114,9 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(20, 65);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton2.Location = new System.Drawing.Point(15, 53);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(125, 21);
+            this.radioButton2.Size = new System.Drawing.Size(98, 17);
             this.radioButton2.TabIndex = 11;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Moderate Wind";
@@ -125,19 +125,17 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 4);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(192, 190);
+            this.pictureBox1.Size = new System.Drawing.Size(144, 154);
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
             // Change
             // 
-            this.Change.Location = new System.Drawing.Point(0, 201);
-            this.Change.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Change.Location = new System.Drawing.Point(0, 163);
             this.Change.Name = "Change";
-            this.Change.Size = new System.Drawing.Size(112, 28);
+            this.Change.Size = new System.Drawing.Size(84, 23);
             this.Change.TabIndex = 8;
             this.Change.Text = "Change View";
             this.Change.UseVisualStyleBackColor = true;
@@ -146,22 +144,23 @@
             // wind
             // 
             this.wind.AutoSize = true;
-            this.wind.Location = new System.Drawing.Point(3, 258);
+            this.wind.Location = new System.Drawing.Point(2, 210);
+            this.wind.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.wind.Name = "wind";
-            this.wind.Size = new System.Drawing.Size(100, 17);
+            this.wind.Size = new System.Drawing.Size(77, 13);
             this.wind.TabIndex = 7;
             this.wind.Text = "Wind Direction";
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(15, 474);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button4.Location = new System.Drawing.Point(11, 373);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(131, 49);
+            this.button4.Size = new System.Drawing.Size(83, 40);
             this.button4.TabIndex = 4;
-            this.button4.Text = "Search for Hotspot";
+            this.button4.Text = "Generate Polygons";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.Generate_polygons);
             // 
             // comboBox1
             // 
@@ -175,10 +174,10 @@
             "SW",
             "W",
             "NW"});
-            this.comboBox1.Location = new System.Drawing.Point(4, 277);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox1.Location = new System.Drawing.Point(3, 225);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.Size = new System.Drawing.Size(92, 21);
             this.comboBox1.TabIndex = 0;
             // 
             // map
@@ -189,8 +188,8 @@
             this.map.GrayScaleMode = false;
             this.map.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.map.LevelsKeepInMemmory = 5;
-            this.map.Location = new System.Drawing.Point(-241, 2);
-            this.map.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.map.Location = new System.Drawing.Point(-181, 2);
+            this.map.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.map.MarkersEnabled = true;
             this.map.MaxZoom = 2;
             this.map.MinZoom = 2;
@@ -204,19 +203,36 @@
             this.map.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.map.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.map.ShowTileGridLines = false;
-            this.map.Size = new System.Drawing.Size(1197, 522);
+            this.map.Size = new System.Drawing.Size(898, 424);
             this.map.TabIndex = 0;
             this.map.Zoom = 0D;
             this.map.Click += new System.EventHandler(this.map_Click);
             this.map.MouseClick += new System.Windows.Forms.MouseEventHandler(this.map_MouseClick);
             // 
+            // Test
+            // 
+            this.Test.Location = new System.Drawing.Point(99, 373);
+            this.Test.Name = "Test";
+            this.Test.Size = new System.Drawing.Size(79, 40);
+            this.Test.TabIndex = 14;
+            this.Test.Text = "Load Polygons";
+            this.Test.UseVisualStyleBackColor = true;
+            this.Test.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // textBox_Message
+            // 
+            this.textBox_Message.Location = new System.Drawing.Point(18, 419);
+            this.textBox_Message.Name = "textBox_Message";
+            this.textBox_Message.Size = new System.Drawing.Size(141, 20);
+            this.textBox_Message.TabIndex = 15;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1216, 537);
+            this.ClientSize = new System.Drawing.Size(933, 444);
             this.Controls.Add(this.splitContainer1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -245,6 +261,8 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton Strong;
         private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.Button Test;
+        private System.Windows.Forms.TextBox textBox_Message;
     }
 }
 

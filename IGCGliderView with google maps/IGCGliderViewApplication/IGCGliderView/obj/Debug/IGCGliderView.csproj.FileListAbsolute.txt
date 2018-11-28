@@ -25,3 +25,29 @@ C:\ICT\4rd Semester\SEP\IGCGliderView with google maps\IGCGliderViewApplication\
 C:\ICT\4rd Semester\SEP\IGCGliderView with google maps\IGCGliderViewApplication\IGCGliderView\obj\Debug\IGCGliderView.pdb
 C:\ICT\4rd Semester\SEP\IGCGliderView with google maps\IGCGliderViewApplication\IGCGliderView\bin\Debug\WPFTestApplication.exe
 C:\ICT\4rd Semester\SEP\IGCGliderView with google maps\IGCGliderViewApplication\IGCGliderView\bin\Debug\WPFTestApplication.pdb
+C:\Users\gianfrancobardi\Documents\SEP-4\SEP4\IGCGliderView with google maps\IGCGliderViewApplication\IGCGliderView\bin\Debug\IGCGliderView.exe.config
+C:\Users\gianfrancobardi\Documents\SEP-4\SEP4\IGCGliderView with google maps\IGCGliderViewApplication\IGCGliderView\bin\Debug\IGCGliderView.exe
+C:\Users\gianfrancobardi\Documents\SEP-4\SEP4\IGCGliderView with google maps\IGCGliderViewApplication\IGCGliderView\bin\Debug\IGCGliderView.pdb
+C:\Users\gianfrancobardi\Documents\SEP-4\SEP4\IGCGliderView with google maps\IGCGliderViewApplication\IGCGliderView\bin\Debug\EntityFramework.dll
+C:\Users\gianfrancobardi\Documents\SEP-4\SEP4\IGCGliderView with google maps\IGCGliderViewApplication\IGCGliderView\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\gianfrancobardi\Documents\SEP-4\SEP4\IGCGliderView with google maps\IGCGliderViewApplication\IGCGliderView\bin\Debug\GMap.NET.Core.dll
+C:\Users\gianfrancobardi\Documents\SEP-4\SEP4\IGCGliderView with google maps\IGCGliderViewApplication\IGCGliderView\bin\Debug\GMap.NET.WindowsForms.dll
+C:\Users\gianfrancobardi\Documents\SEP-4\SEP4\IGCGliderView with google maps\IGCGliderViewApplication\IGCGliderView\bin\Debug\GMap.NET.WindowsPresentation.dll
+C:\Users\gianfrancobardi\Documents\SEP-4\SEP4\IGCGliderView with google maps\IGCGliderViewApplication\IGCGliderView\bin\Debug\Newtonsoft.Json.dll
+C:\Users\gianfrancobardi\Documents\SEP-4\SEP4\IGCGliderView with google maps\IGCGliderViewApplication\IGCGliderView\bin\Debug\System.Data.SQLite.dll
+C:\Users\gianfrancobardi\Documents\SEP-4\SEP4\IGCGliderView with google maps\IGCGliderViewApplication\IGCGliderView\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\gianfrancobardi\Documents\SEP-4\SEP4\IGCGliderView with google maps\IGCGliderViewApplication\IGCGliderView\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\gianfrancobardi\Documents\SEP-4\SEP4\IGCGliderView with google maps\IGCGliderViewApplication\IGCGliderView\bin\Debug\EntityFramework.xml
+C:\Users\gianfrancobardi\Documents\SEP-4\SEP4\IGCGliderView with google maps\IGCGliderViewApplication\IGCGliderView\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\gianfrancobardi\Documents\SEP-4\SEP4\IGCGliderView with google maps\IGCGliderViewApplication\IGCGliderView\bin\Debug\Newtonsoft.Json.xml
+C:\Users\gianfrancobardi\Documents\SEP-4\SEP4\IGCGliderView with google maps\IGCGliderViewApplication\IGCGliderView\bin\Debug\System.Data.SQLite.xml
+C:\Users\gianfrancobardi\Documents\SEP-4\SEP4\IGCGliderView with google maps\IGCGliderViewApplication\IGCGliderView\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\gianfrancobardi\Documents\SEP-4\SEP4\IGCGliderView with google maps\IGCGliderViewApplication\IGCGliderView\bin\Debug\WPFTestApplication.pdb
+C:\Users\gianfrancobardi\Documents\SEP-4\SEP4\IGCGliderView with google maps\IGCGliderViewApplication\IGCGliderView\obj\Debug\IGCGliderView.csprojAssemblyReference.cache
+C:\Users\gianfrancobardi\Documents\SEP-4\SEP4\IGCGliderView with google maps\IGCGliderViewApplication\IGCGliderView\obj\Debug\IGCGliderView.Form1.resources
+C:\Users\gianfrancobardi\Documents\SEP-4\SEP4\IGCGliderView with google maps\IGCGliderViewApplication\IGCGliderView\obj\Debug\IGCGliderView.Properties.Resources.resources
+C:\Users\gianfrancobardi\Documents\SEP-4\SEP4\IGCGliderView with google maps\IGCGliderViewApplication\IGCGliderView\obj\Debug\IGCGliderView.csproj.GenerateResource.cache
+C:\Users\gianfrancobardi\Documents\SEP-4\SEP4\IGCGliderView with google maps\IGCGliderViewApplication\IGCGliderView\obj\Debug\IGCGliderView.csproj.CoreCompileInputs.cache
+C:\Users\gianfrancobardi\Documents\SEP-4\SEP4\IGCGliderView with google maps\IGCGliderViewApplication\IGCGliderView\obj\Debug\IGCGliderView.csproj.CopyComplete
+C:\Users\gianfrancobardi\Documents\SEP-4\SEP4\IGCGliderView with google maps\IGCGliderViewApplication\IGCGliderView\obj\Debug\IGCGliderView.exe
+C:\Users\gianfrancobardi\Documents\SEP-4\SEP4\IGCGliderView with google maps\IGCGliderViewApplication\IGCGliderView\obj\Debug\IGCGliderView.pdb
