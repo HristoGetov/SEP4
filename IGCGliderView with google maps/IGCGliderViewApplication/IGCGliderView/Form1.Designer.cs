@@ -1,6 +1,6 @@
 ﻿namespace IGCGliderView
 {
-    partial class Form1
+    partial class MapForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,20 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MapForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.System_messages = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxColorCoding = new System.Windows.Forms.ComboBox();
+            this.ClearMap_Button = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.Strong = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButtonLightWind = new System.Windows.Forms.RadioButton();
+            this.RadioButtonStrongWind = new System.Windows.Forms.RadioButton();
+            this.radioButtonModerateWind = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Change = new System.Windows.Forms.Button();
             this.wind = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.LoadHotSpots_button = new System.Windows.Forms.Button();
+            this.comboBoxWindDirection = new System.Windows.Forms.ComboBox();
             this.map = new GMap.NET.WindowsForms.GMapControl();
-            this.Test = new System.Windows.Forms.Button();
-            this.textBox_Message = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -54,78 +56,125 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.textBox_Message);
-            this.splitContainer1.Panel1.Controls.Add(this.Test);
+            this.splitContainer1.Panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.splitContainer1.Panel1.Controls.Add(this.System_messages);
+            this.splitContainer1.Panel1.Controls.Add(this.label1);
+            this.splitContainer1.Panel1.Controls.Add(this.comboBoxColorCoding);
+            this.splitContainer1.Panel1.Controls.Add(this.ClearMap_Button);
             this.splitContainer1.Panel1.Controls.Add(this.groupBox1);
             this.splitContainer1.Panel1.Controls.Add(this.pictureBox1);
             this.splitContainer1.Panel1.Controls.Add(this.Change);
             this.splitContainer1.Panel1.Controls.Add(this.wind);
-            this.splitContainer1.Panel1.Controls.Add(this.button4);
-            this.splitContainer1.Panel1.Controls.Add(this.comboBox1);
+            this.splitContainer1.Panel1.Controls.Add(this.LoadHotSpots_button);
+            this.splitContainer1.Panel1.Controls.Add(this.comboBoxWindDirection);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.map);
-            this.splitContainer1.Size = new System.Drawing.Size(933, 444);
-            this.splitContainer1.SplitterDistance = 194;
+            this.splitContainer1.Size = new System.Drawing.Size(978, 500);
+            this.splitContainer1.SplitterDistance = 203;
             this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 0;
             // 
+            // System_messages
+            // 
+            this.System_messages.AutoSize = true;
+            this.System_messages.Enabled = false;
+            this.System_messages.Location = new System.Drawing.Point(6, 478);
+            this.System_messages.Name = "System_messages";
+            this.System_messages.Size = new System.Drawing.Size(58, 13);
+            this.System_messages.TabIndex = 18;
+            this.System_messages.Text = "Welcome !";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 419);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(129, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Color Coding accorting to:";
+            // 
+            // comboBoxColorCoding
+            // 
+            this.comboBoxColorCoding.FormattingEnabled = true;
+            this.comboBoxColorCoding.Items.AddRange(new object[] {
+            "Horizontal Speed",
+            "Altitude Gain"});
+            this.comboBoxColorCoding.Location = new System.Drawing.Point(9, 435);
+            this.comboBoxColorCoding.Name = "comboBoxColorCoding";
+            this.comboBoxColorCoding.Size = new System.Drawing.Size(191, 21);
+            this.comboBoxColorCoding.TabIndex = 16;
+            this.comboBoxColorCoding.SelectedIndexChanged += new System.EventHandler(this.comboBoxColorCoding_SelectedIndexChanged);
+            // 
+            // ClearMap_Button
+            // 
+            this.ClearMap_Button.Location = new System.Drawing.Point(108, 373);
+            this.ClearMap_Button.Name = "ClearMap_Button";
+            this.ClearMap_Button.Size = new System.Drawing.Size(92, 40);
+            this.ClearMap_Button.TabIndex = 14;
+            this.ClearMap_Button.Text = "Clear Map";
+            this.ClearMap_Button.UseVisualStyleBackColor = true;
+            this.ClearMap_Button.Click += new System.EventHandler(this.Clear_Map);
+            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Controls.Add(this.Strong);
-            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Controls.Add(this.radioButtonLightWind);
+            this.groupBox1.Controls.Add(this.RadioButtonStrongWind);
+            this.groupBox1.Controls.Add(this.radioButtonModerateWind);
             this.groupBox1.Location = new System.Drawing.Point(3, 251);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(127, 116);
+            this.groupBox1.Size = new System.Drawing.Size(197, 116);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Wind Speed";
             // 
-            // radioButton1
+            // radioButtonLightWind
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(15, 20);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(76, 17);
-            this.radioButton1.TabIndex = 10;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Light Wind";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButtonLightWind.AutoSize = true;
+            this.radioButtonLightWind.Location = new System.Drawing.Point(15, 20);
+            this.radioButtonLightWind.Name = "radioButtonLightWind";
+            this.radioButtonLightWind.Size = new System.Drawing.Size(130, 17);
+            this.radioButtonLightWind.TabIndex = 10;
+            this.radioButtonLightWind.TabStop = true;
+            this.radioButtonLightWind.Text = "Light Wind (0-5 Knots)";
+            this.radioButtonLightWind.UseVisualStyleBackColor = true;
+            this.radioButtonLightWind.CheckedChanged += new System.EventHandler(this.radioButton_LightWind_CheckedChanged);
             // 
-            // Strong
+            // RadioButtonStrongWind
             // 
-            this.Strong.AutoSize = true;
-            this.Strong.Location = new System.Drawing.Point(15, 87);
-            this.Strong.Name = "Strong";
-            this.Strong.Size = new System.Drawing.Size(84, 17);
-            this.Strong.TabIndex = 12;
-            this.Strong.TabStop = true;
-            this.Strong.Tag = "";
-            this.Strong.Text = "Strong Wind";
-            this.Strong.UseVisualStyleBackColor = true;
+            this.RadioButtonStrongWind.AutoSize = true;
+            this.RadioButtonStrongWind.Location = new System.Drawing.Point(15, 87);
+            this.RadioButtonStrongWind.Name = "RadioButtonStrongWind";
+            this.RadioButtonStrongWind.Size = new System.Drawing.Size(150, 17);
+            this.RadioButtonStrongWind.TabIndex = 12;
+            this.RadioButtonStrongWind.TabStop = true;
+            this.RadioButtonStrongWind.Tag = "";
+            this.RadioButtonStrongWind.Text = "Strong Wind (10-20 Knots)";
+            this.RadioButtonStrongWind.UseVisualStyleBackColor = true;
+            this.RadioButtonStrongWind.CheckedChanged += new System.EventHandler(this.RadioButtonStrongWind_CheckedChanged);
             // 
-            // radioButton2
+            // radioButtonModerateWind
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(15, 53);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(98, 17);
-            this.radioButton2.TabIndex = 11;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Moderate Wind";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButtonModerateWind.AutoSize = true;
+            this.radioButtonModerateWind.Location = new System.Drawing.Point(15, 53);
+            this.radioButtonModerateWind.Name = "radioButtonModerateWind";
+            this.radioButtonModerateWind.Size = new System.Drawing.Size(158, 17);
+            this.radioButtonModerateWind.TabIndex = 11;
+            this.radioButtonModerateWind.TabStop = true;
+            this.radioButtonModerateWind.Text = "Moderate Wind (5-10 Knots)";
+            this.radioButtonModerateWind.UseVisualStyleBackColor = true;
+            this.radioButtonModerateWind.CheckedChanged += new System.EventHandler(this.radioButtonModerateWind_CheckedChanged);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(33, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(144, 154);
             this.pictureBox1.TabIndex = 9;
@@ -133,9 +182,9 @@
             // 
             // Change
             // 
-            this.Change.Location = new System.Drawing.Point(0, 163);
+            this.Change.Location = new System.Drawing.Point(34, 163);
             this.Change.Name = "Change";
-            this.Change.Size = new System.Drawing.Size(84, 23);
+            this.Change.Size = new System.Drawing.Size(143, 44);
             this.Change.TabIndex = 8;
             this.Change.Text = "Change View";
             this.Change.UseVisualStyleBackColor = true;
@@ -151,34 +200,31 @@
             this.wind.TabIndex = 7;
             this.wind.Text = "Wind Direction";
             // 
-            // button4
+            // LoadHotSpots_button
             // 
-            this.button4.Location = new System.Drawing.Point(11, 373);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(83, 40);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Generate Polygons";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.Generate_polygons);
+            this.LoadHotSpots_button.Location = new System.Drawing.Point(9, 373);
+            this.LoadHotSpots_button.Margin = new System.Windows.Forms.Padding(2);
+            this.LoadHotSpots_button.Name = "LoadHotSpots_button";
+            this.LoadHotSpots_button.Size = new System.Drawing.Size(92, 40);
+            this.LoadHotSpots_button.TabIndex = 4;
+            this.LoadHotSpots_button.Text = "Load Hotspots";
+            this.LoadHotSpots_button.UseVisualStyleBackColor = true;
+            this.LoadHotSpots_button.Click += new System.EventHandler(this.Generate_polygons);
             // 
-            // comboBox1
+            // comboBoxWindDirection
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "N",
-            "NE",
-            "E",
-            "SE",
-            "S",
-            "SW",
-            "W",
-            "NW"});
-            this.comboBox1.Location = new System.Drawing.Point(3, 225);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(92, 21);
-            this.comboBox1.TabIndex = 0;
+            this.comboBoxWindDirection.FormattingEnabled = true;
+            this.comboBoxWindDirection.Items.AddRange(new object[] {
+            "North",
+            "South",
+            "East",
+            "West"});
+            this.comboBoxWindDirection.Location = new System.Drawing.Point(3, 225);
+            this.comboBoxWindDirection.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBoxWindDirection.Name = "comboBoxWindDirection";
+            this.comboBoxWindDirection.Size = new System.Drawing.Size(198, 21);
+            this.comboBoxWindDirection.TabIndex = 0;
+            this.comboBoxWindDirection.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // map
             // 
@@ -188,8 +234,8 @@
             this.map.GrayScaleMode = false;
             this.map.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.map.LevelsKeepInMemmory = 5;
-            this.map.Location = new System.Drawing.Point(-181, 2);
-            this.map.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.map.Location = new System.Drawing.Point(2, 3);
+            this.map.Margin = new System.Windows.Forms.Padding(2);
             this.map.MarkersEnabled = true;
             this.map.MaxZoom = 2;
             this.map.MinZoom = 2;
@@ -203,38 +249,22 @@
             this.map.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.map.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.map.ShowTileGridLines = false;
-            this.map.Size = new System.Drawing.Size(898, 424);
+            this.map.Size = new System.Drawing.Size(768, 497);
             this.map.TabIndex = 0;
             this.map.Zoom = 0D;
             this.map.Click += new System.EventHandler(this.map_Click);
             this.map.MouseClick += new System.Windows.Forms.MouseEventHandler(this.map_MouseClick);
             // 
-            // Test
-            // 
-            this.Test.Location = new System.Drawing.Point(99, 373);
-            this.Test.Name = "Test";
-            this.Test.Size = new System.Drawing.Size(79, 40);
-            this.Test.TabIndex = 14;
-            this.Test.Text = "Load Polygons";
-            this.Test.UseVisualStyleBackColor = true;
-            this.Test.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // textBox_Message
-            // 
-            this.textBox_Message.Location = new System.Drawing.Point(18, 419);
-            this.textBox_Message.Name = "textBox_Message";
-            this.textBox_Message.Size = new System.Drawing.Size(141, 20);
-            this.textBox_Message.TabIndex = 15;
-            // 
-            // Form1
+            // MapForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 444);
+            this.ClientSize = new System.Drawing.Size(978, 500);
             this.Controls.Add(this.splitContainer1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "MapForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "HotSpot Spotter";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
@@ -251,18 +281,20 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button LoadHotSpots_button;
+        private System.Windows.Forms.ComboBox comboBoxWindDirection;
         private GMap.NET.WindowsForms.GMapControl map;
         private System.Windows.Forms.Label wind;
         private System.Windows.Forms.Button Change;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton Strong;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.Button Test;
-        private System.Windows.Forms.TextBox textBox_Message;
+        private System.Windows.Forms.RadioButton radioButtonLightWind;
+        private System.Windows.Forms.RadioButton RadioButtonStrongWind;
+        private System.Windows.Forms.RadioButton radioButtonModerateWind;
+        private System.Windows.Forms.Button ClearMap_Button;
+        private System.Windows.Forms.ComboBox comboBoxColorCoding;
+        private System.Windows.Forms.Label System_messages;
+        private System.Windows.Forms.Label label1;
     }
 }
 
