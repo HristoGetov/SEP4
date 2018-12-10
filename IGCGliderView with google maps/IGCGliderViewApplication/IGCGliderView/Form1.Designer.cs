@@ -44,6 +44,13 @@
             this.LoadHotSpots_button = new System.Windows.Forms.Button();
             this.comboBoxWindDirection = new System.Windows.Forms.ComboBox();
             this.map = new GMap.NET.WindowsForms.GMapControl();
+            this.legend_1 = new System.Windows.Forms.Button();
+            this.legend_2 = new System.Windows.Forms.Button();
+            this.legend_3 = new System.Windows.Forms.Button();
+            this.legend_4 = new System.Windows.Forms.Button();
+            this.legend_5 = new System.Windows.Forms.Button();
+            this.label_legendmin = new System.Windows.Forms.Label();
+            this.label_legendmax = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -62,6 +69,13 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.splitContainer1.Panel1.Controls.Add(this.label_legendmax);
+            this.splitContainer1.Panel1.Controls.Add(this.label_legendmin);
+            this.splitContainer1.Panel1.Controls.Add(this.legend_5);
+            this.splitContainer1.Panel1.Controls.Add(this.legend_4);
+            this.splitContainer1.Panel1.Controls.Add(this.legend_3);
+            this.splitContainer1.Panel1.Controls.Add(this.legend_2);
+            this.splitContainer1.Panel1.Controls.Add(this.legend_1);
             this.splitContainer1.Panel1.Controls.Add(this.System_messages);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.comboBoxColorCoding);
@@ -76,7 +90,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.map);
-            this.splitContainer1.Size = new System.Drawing.Size(978, 500);
+            this.splitContainer1.Size = new System.Drawing.Size(978, 536);
             this.splitContainer1.SplitterDistance = 203;
             this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 0;
@@ -85,7 +99,7 @@
             // 
             this.System_messages.AutoSize = true;
             this.System_messages.Enabled = false;
-            this.System_messages.Location = new System.Drawing.Point(6, 478);
+            this.System_messages.Location = new System.Drawing.Point(6, 459);
             this.System_messages.Name = "System_messages";
             this.System_messages.Size = new System.Drawing.Size(58, 13);
             this.System_messages.TabIndex = 18;
@@ -104,8 +118,9 @@
             // 
             this.comboBoxColorCoding.FormattingEnabled = true;
             this.comboBoxColorCoding.Items.AddRange(new object[] {
-            "Horizontal Speed",
-            "Altitude Gain"});
+            "Vertical Speed",
+            "Altitude Gain",
+            "Thermals Count"});
             this.comboBoxColorCoding.Location = new System.Drawing.Point(9, 435);
             this.comboBoxColorCoding.Name = "comboBoxColorCoding";
             this.comboBoxColorCoding.Size = new System.Drawing.Size(191, 21);
@@ -249,17 +264,82 @@
             this.map.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.map.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.map.ShowTileGridLines = false;
-            this.map.Size = new System.Drawing.Size(768, 497);
+            this.map.Size = new System.Drawing.Size(768, 530);
             this.map.TabIndex = 0;
             this.map.Zoom = 0D;
             this.map.Click += new System.EventHandler(this.map_Click);
             this.map.MouseClick += new System.Windows.Forms.MouseEventHandler(this.map_MouseClick);
             // 
+            // legend_1
+            // 
+            this.legend_1.Enabled = false;
+            this.legend_1.Location = new System.Drawing.Point(13, 510);
+            this.legend_1.Name = "legend_1";
+            this.legend_1.Size = new System.Drawing.Size(24, 23);
+            this.legend_1.TabIndex = 19;
+            this.legend_1.UseVisualStyleBackColor = true;
+            // 
+            // legend_2
+            // 
+            this.legend_2.Enabled = false;
+            this.legend_2.Location = new System.Drawing.Point(52, 510);
+            this.legend_2.Name = "legend_2";
+            this.legend_2.Size = new System.Drawing.Size(24, 23);
+            this.legend_2.TabIndex = 20;
+            this.legend_2.UseVisualStyleBackColor = true;
+            // 
+            // legend_3
+            // 
+            this.legend_3.Enabled = false;
+            this.legend_3.Location = new System.Drawing.Point(91, 510);
+            this.legend_3.Name = "legend_3";
+            this.legend_3.Size = new System.Drawing.Size(24, 23);
+            this.legend_3.TabIndex = 21;
+            this.legend_3.UseVisualStyleBackColor = true;
+            // 
+            // legend_4
+            // 
+            this.legend_4.Enabled = false;
+            this.legend_4.Location = new System.Drawing.Point(130, 510);
+            this.legend_4.Name = "legend_4";
+            this.legend_4.Size = new System.Drawing.Size(24, 23);
+            this.legend_4.TabIndex = 22;
+            this.legend_4.UseVisualStyleBackColor = true;
+            // 
+            // legend_5
+            // 
+            this.legend_5.Enabled = false;
+            this.legend_5.Location = new System.Drawing.Point(169, 510);
+            this.legend_5.Name = "legend_5";
+            this.legend_5.Size = new System.Drawing.Size(24, 23);
+            this.legend_5.TabIndex = 23;
+            this.legend_5.UseVisualStyleBackColor = true;
+            // 
+            // label_legendmin
+            // 
+            this.label_legendmin.AutoSize = true;
+            this.label_legendmin.Location = new System.Drawing.Point(12, 494);
+            this.label_legendmin.Name = "label_legendmin";
+            this.label_legendmin.Size = new System.Drawing.Size(13, 13);
+            this.label_legendmin.TabIndex = 25;
+            this.label_legendmin.Text = "0";
+            // 
+            // label_legendmax
+            // 
+            this.label_legendmax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_legendmax.AutoSize = true;
+            this.label_legendmax.Location = new System.Drawing.Point(135, 494);
+            this.label_legendmax.Name = "label_legendmax";
+            this.label_legendmax.Size = new System.Drawing.Size(13, 13);
+            this.label_legendmax.TabIndex = 26;
+            this.label_legendmax.Text = "0";
+            this.label_legendmax.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
             // MapForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(978, 500);
+            this.ClientSize = new System.Drawing.Size(978, 536);
             this.Controls.Add(this.splitContainer1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MapForm";
@@ -295,6 +375,13 @@
         private System.Windows.Forms.ComboBox comboBoxColorCoding;
         private System.Windows.Forms.Label System_messages;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button legend_2;
+        private System.Windows.Forms.Button legend_1;
+        private System.Windows.Forms.Button legend_3;
+        private System.Windows.Forms.Button legend_4;
+        private System.Windows.Forms.Button legend_5;
+        private System.Windows.Forms.Label label_legendmax;
+        private System.Windows.Forms.Label label_legendmin;
     }
 }
 

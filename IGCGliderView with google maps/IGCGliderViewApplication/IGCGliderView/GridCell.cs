@@ -11,6 +11,8 @@ namespace IGCGliderView
     {
         public double Latitude { get; }
         public double Longitude { get; }
+        public double speed { set; get; }
+        public double altitude_gain { set; get; }
 
         public double Long_center { set; get; }
         public double Lat_center { set; get; }

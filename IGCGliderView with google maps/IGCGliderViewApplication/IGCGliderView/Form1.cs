@@ -23,6 +23,7 @@ namespace IGCGliderView
         //static helpers
         private static string speed_metrics_color_coding = "Speed";
         private static string altitude_metrics_colord_coding = "Altitude";
+        private static string thermals_count_color_coding = "Count";
 
 
         public MapForm()
@@ -37,13 +38,30 @@ namespace IGCGliderView
             comboBoxWindDirection.SelectedIndex = Top;
             radioButtonLightWind.Checked = true;
             controller = new Controller(speed_metrics_color_coding);
+            Initialize_legend();
         }
        
               
+        private void Initialize_legend()
+        {
+            legend_1.BackColor = Color.FromArgb(100, Color.GreenYellow);
+            legend_2.BackColor = Color.FromArgb(150, Color.LimeGreen);
+            legend_3.BackColor = Color.FromArgb(150, Color.Yellow);
+            legend_4.BackColor = Color.FromArgb(150, Color.Orange);
+            legend_5.BackColor = Color.FromArgb(150, Color.Red);
+            
+        }
 
+
+        /// <summary>
+        /// This method is the main method to fetch the polygons and the markers from the controller
+        /// it will then continue to reload the legend of the map
+        /// </summary>
+        /// <param name="sender"> Button "Load Hotspots"</param>
+        /// <param name="e"></param>
         private void Generate_polygons(object sender, EventArgs e)
         {
-            System_messages.Text = "Started loading your hotspots ;--)";
+            System_messages.Text = "Started loading your hotspots ; - )";
             List<GMapOverlay> overlays = controller.getHotspots(current_wind_direction, 
                 current_wind_speed, current_metrics_color_coding);
             System_messages.Text = "Total number of Hotspots: " + overlays[1].Markers.Count.ToString();
@@ -53,64 +71,55 @@ namespace IGCGliderView
                 if(gmo!= null)
                 {
                     map.Overlays.Add(gmo);
+                    map.Update();
+                    map.Zoom += 0.1;
                 }
+            }
+            if(current_metrics_color_coding == speed_metrics_color_coding)
+            {
+                int delimiter = controller.MaxSpeedGlobal.ToString().Length;
+                if(delimiter > 6)
+                {
+                    delimiter = 6;
+                }
+                label_legendmax.Text = controller.MaxSpeedGlobal.ToString().Substring(0, delimiter) + "m/s";
+
+                delimiter = controller.MinSpeedGlobal.ToString().Length;
+                if (delimiter > 6)
+                {
+                    delimiter = 6;
+                }
+                label_legendmin.Text = controller.MinSpeedGlobal.ToString().Substring(0, delimiter) + "m/s";
+            }
+            else if (current_metrics_color_coding == altitude_metrics_colord_coding)
+            {
+                int delimiter = controller.MaxAgGlobal.ToString().Length;
+                if (delimiter > 8)
+                {
+                    delimiter = 8;
+                }
+                label_legendmax.Text = controller.MaxAgGlobal.ToString().Substring(0, delimiter) + "m";
+
+                delimiter = controller.MinAgGlobal.ToString().Length;
+                if (delimiter > 8)
+                {
+                    delimiter = 8;
+                }
+                
+                label_legendmin.Text = controller.MinAgGlobal.ToString().Substring(0, delimiter) + "m";
+            }
+            else if (current_metrics_color_coding == thermals_count_color_coding)
+            {
+
+                label_legendmax.Text = controller.MaxThermalsCountGlobal.ToString();
+
+               
+
+                label_legendmin.Text = controller.MinThermalsCountGlobal.ToString();
             }
 
 
-            //int lim = 68800, i=0, j=0;
-            //double beginLong = +8.0000000, //we begin in the lower left corner of the grid 
-            //        endLong = +11.0000000, // we end in the upper right corner of the grid
-            //        beginLat = +54.5000000,
-            //        endLat = +57.5000000,
-            //        Long_step = 0.01666667,
-            //        Lat_step = 0.00833333,
-            //        Lat_index = beginLat,
-            //        Long_index = beginLong;
-            //List< PointLatLng>  Points = new List<PointLatLng>();
-            
-            //do
-            //{
-            //    Points.Clear();
-            //    // start creating the square
-            //    Points.Add(new PointLatLng( Math.Round(+Lat_index, 7), Math.Round(+Long_index, 7)));
-            //    Points.Add(new PointLatLng( Math.Round(+Lat_index,7), Math.Round(+Long_index + Long_step, 7)));
-            //    Points.Add(new PointLatLng( Math.Round(+Lat_index + Lat_step, 7), Math.Round(+Long_index + Long_step, 7)));
-            //    Points.Add(new PointLatLng( Math.Round(+Lat_index + Lat_step,7), Math.Round(+Long_index, 7)));
-                
-            //    // use this square and insert it into a polygon
-            //    var Polygon = new GMapPolygon(Points, ("tester" + i.ToString()))
-            //    {
-            //        Stroke = new Pen(Color.Transparent),
-            //        Fill = new SolidBrush(Color.FromArgb(150, Color.Blue)),
-                    
-            //    };
 
-            //    polygons.Polygons.Add(Polygon);
-
-
-            //    Long_index += Long_step;
-            //    if(Long_index >= endLong)
-            //    {
-            //        Long_index = beginLong;
-            //        j++;
-                    
-            //        map.Overlays.Add(polygons);
-            //        map.Update();
-            //        polygons = new GMapOverlay("polygons" + j.ToString());
-            //    }
-            //    Lat_index = beginLat + j * Lat_step;
-            //    if(Lat_index >= endLat)
-            //    {
-            //        polygons_created = true;
-            //        map.Refresh();
-            //        return;
-            //    }
-            //    i++;
-            //} while (i < lim);
-            ////textBox_Message.Text = "Last Poly coord" + polygons.Polygons[polygons.Polygons.Count-1].Points[3].Lat.ToString();
-            //polygons_created = true;
-            //map.Refresh();
-            //return;
 
         }
 
@@ -174,7 +183,6 @@ namespace IGCGliderView
 
         private void comboBoxColorCoding_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
             if (comboBoxColorCoding.SelectedIndex == 1)
             {
                 current_metrics_color_coding = altitude_metrics_colord_coding;
@@ -183,7 +191,10 @@ namespace IGCGliderView
             {
                 current_metrics_color_coding = speed_metrics_color_coding;
             }
-
+            else if (comboBoxColorCoding.SelectedIndex == 2)
+            {
+                current_metrics_color_coding = thermals_count_color_coding;
+            }
         }
 
         private void radioButton_LightWind_CheckedChanged(object sender, EventArgs e)
