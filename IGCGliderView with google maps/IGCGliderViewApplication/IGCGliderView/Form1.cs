@@ -191,7 +191,7 @@ namespace IGCGliderView
             {
                 current_metrics_color_coding = speed_metrics_color_coding;
             }
-            else if (comboBoxColorCoding.SelectedIndex == 2)
+            else
             {
                 current_metrics_color_coding = thermals_count_color_coding;
             }

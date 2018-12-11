@@ -44,8 +44,6 @@ namespace IGCGliderView
 
         private List<Double> Divisors;
 
-        private string Last_Wind_Speed_Loaded;
-        private string Last_Wind_Direction_Loaded;
         private string metrics_for_color_coding;
 
         public double MaxSpeedGlobal { set; get; }
@@ -57,9 +55,6 @@ namespace IGCGliderView
 
         private FinalModel db;
         private List<Hotspot_container> hotspots_array;
-        private List<GridCell> cells;
-        private GMapOverlay polygons;
-        private GMapOverlay markers;
 
         #region: Constructor
         /// <summary>
@@ -70,8 +65,7 @@ namespace IGCGliderView
         {
             // Cut-off numbers for selecting a color for a corresponding vertical speed gain
             Divisors = new List<double>(6);
-            Last_Wind_Direction_Loaded = "none";
-            Last_Wind_Speed_Loaded = "none";
+            
 
             //Initialize connection to DB
             db = new FinalModel();
@@ -87,24 +81,14 @@ namespace IGCGliderView
             GMapOverlay temp_polygons = new GMapOverlay("Polygons");
             GMapOverlay temp_markers = new GMapOverlay("Marker");
             List<Hotspot_container> hotspots_temp = new List<Hotspot_container>();
+            metrics_for_color_coding = metrics;
 
 
 
-            // 1st step: check if there has been a previous load
-            if (Last_Wind_Direction_Loaded == "none" && Last_Wind_Speed_Loaded == "none")
-            {
-                //if this is the first load, we check if the metrics for color coding is the same as the standard
-                //the standard is "Speed"
-                if (metrics_for_color_coding != metrics)
-                {
-                    //if there is a difference, we reload the color coding
-                    metrics_for_color_coding = metrics;
-                    
-                }
 
-                // We query for the hotspots with the pre-conditions for search given through the GUI
-                hotspots_temp = GetHotspotsFromDB(wind_dir, wind_speed);
-            }
+            // We query for the hotspots with the pre-conditions for search given through the GUI
+            hotspots_temp = GetHotspotsFromDB(wind_dir, wind_speed);
+
 
             hotspots_temp = filter_hotspots(hotspots_temp);
             // update color coding
@@ -232,16 +216,16 @@ namespace IGCGliderView
             {
                 if (!ReferenceEquals(hotspot_s[0],null))
                 {
-                    for (int j = 0; j < hotspot_s[i].gridCells.Count; j++)
-                    {
-                        var Polygon = new GMapPolygon(GetPointLatLngs(hotspot_s[i].gridCells[j]),
-                            "PolygonNo" + ((i + 1) * (j + 1)).ToString())
+
+
+                        var Polygon = new GMapPolygon(GetPointLatLngs(hotspot_s[i].gridCells[0]),
+                            "PolygonNo" + ((i + 1) ).ToString())
                         {
                             Stroke = new Pen(Color.Transparent),
                             Fill = new SolidBrush(hotspot_s[i].color)
                         };
                         gMapOverlay.Polygons.Add(Polygon);
-                    }
+
                 }
             }
 
@@ -328,7 +312,11 @@ namespace IGCGliderView
             return Points;
         }
 
-        // this method determines the ranges for each color code
+        /// <summary>
+        /// This method determines the ranges for each color code
+        /// </summary>
+        /// <param name="min_speed">Minimum speed/altitude/thermal count in dataset</param>
+        /// <param name="max_speed">Maximum speed/altitude/thermal count in dataset</param>
         private void SetSpeedRange(double min_speed, double max_speed)
         {
             Divisors = new List<double>(6);
